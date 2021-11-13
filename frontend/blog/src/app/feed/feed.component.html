@@ -3,13 +3,13 @@
         <div class="col-md-4">
             <div class="card border-0" style="width: 18rem;">
                 <div class="d-flex justify-content-center">
-                    <img class="card-img-top rounded-circle w-75" src="../../assets/Sunni.png" alt="Foto Aleatória">
+                    <img class="card-img-top rounded-circle w-75" alt="Foto Aleatória">
                 </div>
 
                 <div class="card-body">
                     <h5 class="card-title text-center"> Isadora Lemes </h5>
-                    <p class="card-text text-center"> K-Pop Star </p>
-                    <a class="btn btn-outline-dark d-flex justify-content-center" href="https://www.instagram.com/miyayeah/" target="_blank"> Instagram </a>
+                    <p class="card-text text-center"> Desenvolvedora </p>
+                    <a class="btn btn-outline-dark d-flex justify-content-center" href="https://www.linkedin.com/in/isadora-lemes-fernandes-a7a177161/" target="_blank"> LinkedIn </a>
 
                     <hr class="mt-4 mb-4">
                     <h6 class="mb-3 text-monospace text-center"> Pesquisar por título </h6>
@@ -23,23 +23,34 @@
             <div>
                 <h3 class="text-center mb-4 text-monospace">Digite abaixo seus comentários</h3>
                 <div class="form-group">
-                    <label class="text-monospace" for="titulo">Título</label>
-                    <input class="form-control" type="text" name="titulo" id="titulo" placeholder="Digite o título da postagem">
+                    <label class="text-monospace mb-2" for="nome">Nome</label>
+                    <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite seu nome" [(ngModel)]='post.nome'>
                 </div>
 
                 <div class="form-group mt-3">
-                    <label class="text-monospace" for="texto">Texto</label>
-                    <textarea class="form-control" type="text" name="texto" id="texto" cols="30" rows="5" placeholder="Digite a sua mensagem"></textarea>
+                    <label class="text-monospace mb-2" for="mensagem">Mensagem</label>
+                    <textarea class="form-control" type="text" name="mensagem" id="mensagem" cols="30" rows="5" placeholder="Digite a sua mensagem" [(ngModel)]='post.mensagem'></textarea>
                 </div>
 
                 <div class="d-flex justify-content-end mt-3">
-                    <button class="btn btn-outline-info w-25" type="button">Publicar</button>
+                    <button class="btn btn-outline-info w-25" type="button" (click)="createPosts()">Publicar</button>
                 </div>
             </div>
 
             <hr class="mt-4 mb-4">
             <h3 class="text-center mb-4 text-monospace">Comentários adicionados</h3>
+            <div class="container">
+                <div class="card mb-4" *ngFor="let post of listPost">
+                    <div class="card-header">
+                        <h5 class="card-title">{{ post.id }}</h5>
+                    </div>
 
+                    <div class="card-body">
+                        <p class="card-text">{{ post.nome }}</p>
+                        <p class="card-text">{{ post.mensagem }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
