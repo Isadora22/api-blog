@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "nome": "Isadora",
+      "mensagem": "Seja bem vindo ao meu blog pessoal!"
+    },
+    {
+      "id": 2,
+      "nome": "Glória",
+      "mensagem": "Seja bem vindo!"
+    },
+    {
+      "id": 3,
+      "nome": "Marta",
+      "mensagem": "Digital Innovation One"
+    }
+  ]
+}
